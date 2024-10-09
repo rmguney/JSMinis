@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instant Messaging App Mockup</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -11,6 +11,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hidden {
             display: none;
         }
@@ -23,8 +24,8 @@
         <div class="bg-gray-800 p-8 rounded-md shadow-lg w-1/3 ">
             <h2 class="text-3xl font-bold text-center gradient-text mb-4">Login</h2>
             <form onsubmit="event.preventDefault(); showApp();">
-                <input type="email" placeholder="Email" class="w-full p-2 bg-gray-700  rounded-md mb-4 text-white">
-                <input type="password" placeholder="Password" class="w-full p-2 bg-gray-700  rounded-md mb-4 text-white">
+                <input type="email" placeholder="Email" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+                <input type="password" placeholder="Password" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Log In</button>
             </form>
         </div>
@@ -33,7 +34,7 @@
     <div id="app-screen" class="container mx-auto px-4 py-8 hidden">
         <h2 class="text-4xl text-center font-bold m-4 gradient-text">Welcome Birkan!</h2>
         <div class="flex">
-            <div class="w-1/4 bg-gray-800 p-4 rounded-md shadow-lg ">
+            <div class="w-1/4 bg-gray-800 p-4 rounded-md shadow-lg h-auto overflow-y-scroll">
                 <h2 class="text-2xl font-bold mb-4 gradient-text">Channels</h2>
                 <ul class="space-y-2">
                     <li><a href="#" class="text-pink-400 font-semibold hover:underline" onclick="showChannel('# Main')"># Main</a></li>
@@ -43,19 +44,19 @@
                     <li><a href="#" class="text-pink-400 font-semibold hover:underline" onclick="showChannel('# General')"># Meetings</a></li>
                 </ul>
                 <h2 class="text-2xl font-bold mb-4 pt-4 gradient-text">Private Chats</h2>
-                <button onclick="showPrivateChat('R. Melih Güney')" class="px-4 py-2 bg-blue-500 text-white rounded-md w-full">+ Start a Private Chat</button>
-                <ul class="space-y-2 pt-4">
+                <button onclick="openPrivateChatModal()" class="px-4 py-2 bg-blue-500 text-white rounded-md w-full">+ Start a Private Chat</button>
+                <ul id="private-chat-list" class="space-y-2 pt-4">
                     <li><a href="#" class="text-pink-400 font-semibold hover:underline" onclick="showPrivateChat('R. Melih Güney')">o R. Melih Güney</a></li>
                 </ul>
             </div>
 
             <div id="chat-screen" class="w-2/4 ml-4">
-                <div class="bg-gray-800 p-4 rounded-md shadow-lg mb-4  flex justify-between">
+                <div class="bg-gray-800 p-4 rounded-md shadow-lg mb-4 flex justify-between">
                     <h2 id="channel-name" class="text-2xl font-bold gradient-text"># Main</h2>
                     <input type="text" placeholder="Search in channel..." class="p-2 bg-gray-700 rounded-md text-white">
                 </div>
 
-                <div id="channel-content" class="bg-gray-800 p-4 rounded-md shadow-lg h-96 verflow-y-scroll ">
+                <div id="channel-content" class="bg-gray-800 p-4 rounded-md shadow-lg h-auto overflow-y-scroll">
                     <div class="mb-4">
                         <p class="font-semibold text-pink-400">Leyla Aydın <span class="text-gray-400 text-sm">2:50 PM</span><span class="text-xs text-gray-500 ml-2">Seen by 4</span></p>
                         <p class="text-white">Here’s the image from the last presentation:</p>
@@ -89,21 +90,21 @@
                             <span class="text-white">Prepare the requirements</span>
                             <div>
                                 <span class="px-2 py-1 text-xs font-semibold text-white bg-yellow-500 rounded-md">In Progress</span>
-                                <span class="px-2 py-1 text-xs font-semibold text-white bg-gray-500 rounded-md">Edit</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-white bg-gray-500 rounded-md" onclick="editTaskModal()">Edit</span>
                             </div>
                         </li>
                         <li class="flex justify-between items-center">
                             <span class="text-white">Draw a use case diagram</span>
                             <div>
                                 <span class="px-2 py-1 text-xs font-semibold text-white bg-green-500 rounded-md">Completed</span>
-                                <span class="px-2 py-1 text-xs font-semibold text-white bg-gray-500 rounded-md">Edit</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-white bg-gray-500 rounded-md" onclick="editTaskModal()">Edit</span>
                             </div>
                         </li>
                         <li class="flex justify-between items-center">
                             <span class="text-white">Design a mockup screen</span>
                             <div>
                                 <span class="px-2 py-1 text-xs font-semibold text-white bg-red-500 rounded-md">Stuck</span>
-                                <span class="px-2 py-1 text-xs font-semibold text-white bg-gray-500 rounded-md">Edit</span>
+                                <span class="px-2 py-1 text-xs font-semibold text-white bg-gray-500 rounded-md" onclick="editTaskModal()">Edit</span>
                             </div>
                         </li>
                     </ul>
@@ -112,16 +113,124 @@
 
                 <div class="bg-gray-800 p-4 rounded-md shadow-lg mb-4">
                     <h3 class="font-semibold text-lg mb-2 gradient-text">Create Poll</h3>
-                    <button onclick="showPoll()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Create Poll</button>
+                    <button onclick="showPollModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Create Poll</button>
                 </div>
 
                 <div class="bg-gray-800 p-4 rounded-md shadow-lg mb-4">
                     <h3 class="font-semibold text-lg mb-2 gradient-text">Admin Actions</h3>
-                    <button onclick="showChannelCreation()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mb-2">Create a New Channel</button>
+                    <button onclick="showChannelCreationModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mb-2">Create a New Channel</button>
                     <button onclick="showManageUsersModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mb-2">Manage Users</button>
                     <button onclick="showSendLinkModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mb-2">Generate and Send Invite Link</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="private-chat-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-md w-1/3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-semibold gradient-text mb-4">Start a Private Chat</h3>
+                <button onclick="closeModal('private-chat-modal')" class="text-white text-xl">&times;</button>
+            </div>
+            <input type="text" id="private-chat-user" placeholder="Enter username" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <button onclick="startPrivateChat()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Start Chat</button>
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-md w-1/3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-semibold gradient-text mb-4">Assign New Task</h3>
+                <button onclick="closeModal('task-modal')" class="text-white text-xl">&times;</button>
+            </div>
+            <input type="text" id="task-name" placeholder="Task Name" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <input type="text" id="task-assignee" placeholder="Assignee (Username)" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <button onclick="createTask()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Create Task</button>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="edit-task-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-md w-1/3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-semibold gradient-text mb-4">Edit Task</h3>
+                <button onclick="closeModal('edit-task-modal')" class="text-white text-xl">&times;</button>
+            </div>
+            <input type="text" id="edit-task-name" placeholder="Task Name" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <input type="text" id="edit-task-assignee" placeholder="Assignee (Username)" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <select id="task-progress" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <button onclick="saveTaskEdit()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Poll Modal -->
+    <div id="poll-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-md w-1/3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-semibold gradient-text mb-4">Create New Poll</h3>
+                <button onclick="closeModal('poll-modal')" class="text-white text-xl">&times;</button>
+            </div>
+            <input type="text" id="poll-channel" placeholder="Channel to post the poll" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <input type="text" id="poll-name" placeholder="Poll Name" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <div id="poll-options">
+                <input type="text" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white" placeholder="Option 1">
+            </div>
+            <button onclick="addPollOption()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mb-2">Add Option</button>
+            <button onclick="createPoll()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Create Poll</button>
+        </div>
+    </div>
+
+    <!-- Manage Users Modal -->
+    <div id="manage-users-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-md w-1/3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-semibold gradient-text mb-4">Manage Users</h3>
+                <button onclick="closeModal('manage-users-modal')" class="text-white text-xl">&times;</button>
+            </div>
+            <input type="text" id="manage-username" placeholder="Username" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <div>
+                <label class="text-white">Manage Channels</label>
+                <input type="checkbox" id="manage-channels" class="ml-2">
+            </div>
+            <div>
+                <label class="text-white">Generate Invites</label>
+                <input type="checkbox" id="generate-invites" class="ml-2">
+            </div>
+            <button onclick="saveUserManagement()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mt-4">Save</button>
+        </div>
+    </div>
+
+    <!-- Invite Modal -->
+    <div id="invite-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-md w-1/3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-semibold gradient-text mb-4">Generate and Send Invite</h3>
+                <button onclick="closeModal('invite-modal')" class="text-white text-xl">&times;</button>
+            </div>
+            <input type="text" id="invite-link" placeholder="Generated Invite Link" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <button onclick="generateInviteLink()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mb-4">Generate</button>
+            <button onclick="copyInviteLink()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mb-4">Copy</button>
+            <input type="email" id="invite-email" placeholder="Email" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <button onclick="sendInvite()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Send</button>
+        </div>
+    </div>
+
+    <!-- Channel Creation Modal -->
+    <div id="channel-creation-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-md w-1/3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-semibold gradient-text mb-4">Create New Channel</h3>
+                <button onclick="closeModal('channel-creation-modal')" class="text-white text-xl">&times;</button>
+            </div>
+            <input type="text" id="channel-name" placeholder="Channel Name" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <input type="text" id="channel-description" placeholder="Channel Description" class="w-full p-2 bg-gray-700 rounded-md mb-4 text-white">
+            <button onclick="createChannel()" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full">Create Channel</button>
         </div>
     </div>
 
@@ -145,7 +254,7 @@
                 `;
                 channelContent.appendChild(messageElement);
                 messageInput.value = '';
-                channelContent.scrollTop = channelContent.scrollHeight; // Scroll to bottom
+                channelContent.scrollTop = channelContent.scrollHeight;
             }
         }
 
@@ -183,7 +292,93 @@
             let channelContent = document.getElementById('channel-content');
             channelContent.innerHTML = `<p class="text-white">This is a private chat with ${userName}. Say hello!</p>`;
         }
+
+        function openPrivateChatModal() {
+            document.getElementById('private-chat-modal').classList.remove('hidden');
+        }
+
+        function startPrivateChat() {
+            const userName = document.getElementById('private-chat-user').value;
+            if (userName.trim() !== '') {
+                const chatList = document.getElementById('private-chat-list');
+                const newChat = document.createElement('li');
+                newChat.innerHTML = `<a href="#" class="text-pink-400 font-semibold hover:underline" onclick="showPrivateChat('${userName}')">o ${userName}</a>`;
+                chatList.appendChild(newChat);
+                closeModal('private-chat-modal');
+            }
+        }
+
+        function showTaskModal() {
+            document.getElementById('task-modal').classList.remove('hidden');
+        }
+
+        function createTask() {
+            closeModal('task-modal');
+        }
+
+        function editTaskModal() {
+            document.getElementById('edit-task-modal').classList.remove('hidden');
+        }
+
+        function saveTaskEdit() {
+            closeModal('edit-task-modal');
+        }
+
+        function showPollModal() {
+            document.getElementById('poll-modal').classList.remove('hidden');
+        }
+
+        function createPoll() {
+            closeModal('poll-modal');
+        }
+
+        function addPollOption() {
+            const pollOptions = document.getElementById('poll-options');
+            const newOption = document.createElement('input');
+            newOption.type = "text";
+            newOption.className = "w-full p-2 bg-gray-700 rounded-md mb-4 text-white";
+            newOption.placeholder = `Option ${pollOptions.children.length + 1}`;
+            pollOptions.appendChild(newOption);
+        }
+
+        function showManageUsersModal() {
+            document.getElementById('manage-users-modal').classList.remove('hidden');
+        }
+
+        function saveUserManagement() {
+            closeModal('manage-users-modal');
+        }
+
+        function showChannelCreationModal() {
+            document.getElementById('channel-creation-modal').classList.remove('hidden');
+        }
+
+        function createChannel() {
+            closeModal('channel-creation-modal');
+        }
+
+        function showSendLinkModal() {
+            document.getElementById('invite-modal').classList.remove('hidden');
+        }
+
+        function generateInviteLink() {
+            document.getElementById('invite-link').value = 'https://generated-link.com/invite';
+        }
+
+        function copyInviteLink() {
+            const inviteLink = document.getElementById('invite-link');
+            inviteLink.select();
+            document.execCommand("copy");
+        }
+
+        function sendInvite() {
+            closeModal('invite-modal');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
     </script>
 </body>
+
 </html>
-    
