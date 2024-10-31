@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O M N I A</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('../assets/omnia-back.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .card-wrap {
+      perspective: 1000px;
+    }
+    .card {
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .card-bg {
+      transition: transform 0.3s ease, background-size 0.3s ease;
+      will-change: transform;
+      background-size: 150%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .card:hover .card-bg {
+      background-size: 100%; 
+    }
+    .card-info {
+      background-color: rgba(255, 255, 255, 0.2); 
+      color: #000000; 
+    }
+  </style>
+</head>
+<body class="p-10">
+
+  <div class="flex items-center justify-center mb-8">
+    <img src="../assets/omnia-login.png" alt="Omnia Login" class="max-w-60 h-30" />
+  </div>
+  
+
+  <div id="app" class="flex flex-wrap justify-center gap-8 w-3/4 mx-auto">
+
+    <div class="card-wrap">
+      <a href="http://onlineislemler.b2cargo.com:81/" class="card-link">
+        <div class="card relative w-80 h-60 bg-white border border-orange-500 rounded-lg overflow-hidden shadow-sm hover:shadow-lg" data-image="../assets/husk-web.png">
+          <div class="card-bg absolute inset-0 bg-center"></div>
+          <div class="card-info absolute bottom-0 p-4">
+            <span class="text-xl font-bold">Raporlar</span>
+            <p>Teslimat Raporları</p>
+            <p>Sipariş Raporları</p>
+            <p>Firma ve Ürün Tanımlama</p>
+            <p>Kullanıcı Atama</p>
+            <p>Teslimat ve Sipariş Sorguları</p>
+
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap">
+      <a href="#" class="card-link">
+        <div class="card relative w-80 h-60 bg-white border border-orange-500 rounded-lg overflow-hidden shadow-sm hover:shadow-lg" data-image="../assets/husky-storage.png">
+          <div class="card-bg absolute inset-0 bg-center"></div>
+          <div class="card-info absolute bottom-0 p-4">
+            <span class="text-xl font-bold">İnteraktif Depo</span>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap">
+      <a href="https://odeme.b2cargo.com/" class="card-link">
+        <div class="card relative w-80 h-60 bg-white border border-orange-500 rounded-lg overflow-hidden shadow-sm hover:shadow-lg" data-image="../assets/husky-bonus.png">
+          <div class="card-bg absolute inset-0 bg-center"></div>
+          <div class="card-info absolute bottom-0 p-4">
+            <span class="text-xl font-bold">Ödeme</span>
+            <p>Online ödeme sistemi</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap">
+      <a href="https://mobil.b2cargo.com/login" class="card-link">
+        <div class="card relative w-80 h-60 bg-white border border-orange-500 rounded-lg overflow-hidden shadow-sm hover:shadow-lg" data-image="../assets/husky-phone.png">
+          <div class="card-bg absolute inset-0 bg-center"></div>
+          <div class="card-info absolute bottom-0 p-4">
+            <span class="text-xl font-bold">Mobil Terminal</span>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap">
+      <a href="http://onlineislemler.b2cargo.com/B2CargoOnline/index.aspx" class="card-link">
+        <div class="card relative w-80 h-60 bg-white border border-orange-500 rounded-lg overflow-hidden shadow-sm hover:shadow-lg" data-image="../assets/husky-idle.png">
+          <div class="card-bg absolute inset-0 bg-center"></div>
+          <div class="card-info absolute bottom-0 p-4">
+            <span class="text-xl font-bold">Klasik</span>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-wrap">
+      <a href="http://onlineislemler.b2cargo.com/B2CargoOnline/index.aspx" class="card-link">
+        <div class="card relative w-80 h-60 bg-white border border-orange-500 rounded-lg overflow-hidden shadow-sm hover:shadow-lg" data-image="../assets/husky-delivered.png">
+          <div class="card-bg absolute inset-0 bg-center"></div>
+          <div class="card-info absolute bottom-0 p-4">
+            <span class="text-xl font-bold">Belgeler ve Prosedürler</span>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+            <p>Hizmet Listesi</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</body>
+<script src="../scripts/omnia.js"></script>
+</html>

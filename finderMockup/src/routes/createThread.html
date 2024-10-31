@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Thread - Stufffinder</title>
+    <link rel="stylesheet" href="../css/create.css"> 
+</head>
+<body>
+
+<div class="thread-container">
+    <h2>Create Thread</h2>
+
+    <input type="text" placeholder="Thread Title">
+    <textarea placeholder="Visual description of the object" rows="4"></textarea>
+    <input type="text" placeholder="Upload media">
+
+    <div class="tag-section">
+        <label for="wikidata-material">Material:</label>
+        <select id="wikidata-material">
+            <option value="aluminium">Aluminium</option>
+            <option value="metal">Metal</option>
+        </select>
+
+        <label for="wikidata-location">Location:</label>
+        <select id="wikidata-location">
+            <option value="mons-hadley">Mons Hadley</option>
+            <option value="rio-grande">Rio Grande</option>
+        </select>
+
+        <label for="wikidata-creator">Creator:</label>
+        <select id="wikidata-creator">
+            <option value="paul-van-hoeydonck">Paul Van Hoeydonck</option>
+        </select>
+
+        <button class="add-tag-button" id="add-tag-button">+ Add More Tags</button>
+
+    </div>
+
+
+    <button>Create Thread</button>
+</div>

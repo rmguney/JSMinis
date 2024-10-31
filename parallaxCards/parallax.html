@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Cards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card-wrap {
+      perspective: 800px;
+    }
+    .card {
+      transition: transform 0.5s ease;
+    }
+    .card-bg {
+      transition: transform 0.5s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-200 p-10">
+
+  <h1 class="text-2xl font-bold text-center text-brown-700 mb-8">Hover over the cards</h1>
+
+  <div id="app" class="flex flex-wrap justify-center gap-8">
+    <!-- Card 1 -->
+    <div class="card-wrap">
+      <div class="card relative w-60 h-80 bg-gray-800 rounded-lg overflow-hidden shadow-lg" data-image="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=">
+        <div class="card-bg absolute inset-0 bg-center bg-cover"></div>
+        <div class="card-info absolute bottom-0 p-4 text-white bg-gradient-to-t from-black via-transparent to-transparent">
+          <h1 class="text-xl font-bold">Canyons</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-wrap">
+      <div class="card relative w-60 h-80 bg-gray-800 rounded-lg overflow-hidden shadow-lg" data-image="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+        <div class="card-bg absolute inset-0 bg-center bg-cover"></div>
+        <div class="card-info absolute bottom-0 p-4 text-white bg-gradient-to-t from-black via-transparent to-transparent">
+          <h1 class="text-xl font-bold">Beaches</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-wrap">
+      <div class="card relative w-60 h-80 bg-gray-800 rounded-lg overflow-hidden shadow-lg" data-image="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+        <div class="card-bg absolute inset-0 bg-center bg-cover"></div>
+        <div class="card-info absolute bottom-0 p-4 text-white bg-gradient-to-t from-black via-transparent to-transparent">
+          <h1 class="text-xl font-bold">Trees</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 4 -->
+    <div class="card-wrap">
+      <div class="card relative w-60 h-80 bg-gray-800 rounded-lg overflow-hidden shadow-lg" data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+        <div class="card-bg absolute inset-0 bg-center bg-cover"></div>
+        <div class="card-info absolute bottom-0 p-4 text-white bg-gradient-to-t from-black via-transparent to-transparent">
+          <h1 class="text-xl font-bold">Lakes</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="parallax.js"></script>
+</body>
+</html>

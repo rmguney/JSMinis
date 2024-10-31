@@ -1,0 +1,25 @@
+graph TB
+    User((User))
+    Frontend[Frontend]
+    AdminModerator((Admin/Moderator))
+    Backend[Backend]
+    ExternalDataAPI[(External Data API)]
+    NotificationService[Notification Service]
+    AuthService[Auth Service]
+    Database[(Database)]
+    
+    User -->|Registers/Login| Frontend
+    User -->|Displays| Frontend
+    Frontend -->|Submits Threads/Comments| Backend
+    Frontend -->|Requests Data| Backend
+    Frontend -->|Admin Tools| AdminModerator
+    AdminModerator -->|Manages Platform| Frontend
+    AdminModerator -->|Moderates Threads| Backend
+    AdminModerator -->|Manages Tags/Content| Backend
+    AdminModerator -->|Suspends Users| Backend
+    AdminModerator -->|Sends Notifications| NotificationService
+    Backend -->|Fetches/Stores Data| Database
+    Backend -->|Integrates| ExternalDataAPI
+    Backend -->|Handles| NotificationService
+    Backend -->|Authenticates| AuthService
+    AuthService -->|Validates| Database

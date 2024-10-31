@@ -1,0 +1,39 @@
+
+html, body {
+    overflow-x: hidden;
+  } 
+
+  .h-550{
+     height: 550px;
+  }
+
+  .canvas {
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .gradient-bg {
+background-image: radial-gradient(circle at center, #65c8db, #00B4D8);
+}
+
+@media (min-width: 1720px) {
+.three-xl {
+  white-space: nowrap;
+}
+}
+
+@media (min-width: 1720px) {
+.three-mac {
+  position: absolute;
+  top: 0;
+  right: 200px;
+}
+}

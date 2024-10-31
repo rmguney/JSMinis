@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread Details - Stufffinder</title>
+    <link rel="stylesheet" href="../css/thread.css"> 
+</head>
+<body>
+
+<div class="thread-container">
+    <h2>What is this? Found near the riverbank...</h2>
+    <small>Posted by user123 - 1 hour ago</small>
+
+    <!-- Description with Image -->
+    <div class="description">
+        <img src="https://s3.amazonaws.com/mhka_ensembles_production/assets/public/000/005/478/medium_500/3051.jpg?1493149452" alt="Placeholder Image">
+        <div>
+            <p>This metal object was found near the riverbank. It seems to be made of aluminium. It was found near Rio Grande, and I suspect it could be linked to a historical object. Can anyone help identify this?</p>
+            <div class="tags">
+                <a href="https://www.wikidata.org/wiki/Q663" class="tag">Aluminium (Q663)</a>
+                <a href="https://www.wikidata.org/wiki/Q1907" class="tag">Rio Grande (Q1907)</a>
+                <a href="https://www.wikidata.org/wiki/Q553403" class="tag">Paul Van Hoeydonck (Q553403)</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voting Section -->
+    <div class="vote-buttons">
+        <button class="vote-button">▲ Upvote</button>
+        <button class="vote-button">▼ Downvote</button>
+        <p style="margin: 0; line-height: 32px;">190 Votes</p>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comment-box">
+        <h3>Comments</h3>
+
+        <!-- Top Comment with Selected Answer -->
+        <div class="top-comment">
+            <div class="selected-answer">Selected Answer by the User</div>
+            <div class="comment">
+                <div class="vote-buttons">
+                    <button class="vote-button">▲</button>
+                    <p style="margin: 0; line-height: 32px;">466</p>
+                    <button class="vote-button">▼</button>
+                </div>
+                <div class="comment-content">
+                    <small>user456 - 30 mins ago</small>
+                    <p>Looks like it could be part of an old tool, maybe used for farming. Any markings?</p>
+                </div>
+            </div>
+
+            <!-- Subcomment -->
+            <div class="subcomment">
+                <small>user789 - 20 mins ago</small>
+                <p>Yeah, that seems about right. Maybe an old manufacturing tool.</p>
+
+            </div>
+        </div>
+
+        <!-- Second Comment -->
+        <div class="comment">
+            <div class="vote-buttons">
+                <button class="vote-button">▲</button>
+                <p style="margin: 0; line-height: 32px;">120</p>
+                <button class="vote-button">▼</button>
+            </div>
+            <div class="comment-content">
+                <small>user987 - 15 mins ago</small>
+                <p>This could be something used in a factory. Does it have any company logos?</p>
+            </div>
+        </div>
+
+        <!-- Subcomment -->
+        <div class="subcomment">
+            <small>user654 - 5 mins ago</small>
+            <p>I don’t think that’s it. It looks more like a decorative piece.</p>
+        </div>
+
+        <!-- Add Comment -->
+        <textarea placeholder="Add a comment..." rows="3"></textarea>
+        <button>Post Comment</button>
+    </div>
+</div>
+
+</body>
+</html>

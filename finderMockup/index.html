@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stufffinder</title>
+    <link rel="stylesheet" href="src/css/style.css"> 
+</head>
+<body>
+
+<header>
+    <h1>Stufffinder</h1>
+    <input type="text" placeholder="Search stuff">
+    <div class="user-info">
+        <img src="https://placehold.co/40/000000/FFF" alt="User Avatar">
+        <a href="src/routes/userProfile.html">user123</a>
+        <a href="src/routes/login.html" class="logout-button">Logout</a>
+    </div>
+</header>
+
+<div class="container">
+    <!-- Sidebar navigation -->
+    <nav>
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Explore</a></li>
+            <li><a href="src/routes/userProfile.html">My Threads</a></li>
+            <li><a href="src/routes/createThread.html">Create Thread</a></li>
+            <li><a href="index.html">New User Guide</a></li>
+        </ul>
+
+        <h3>Recent Tags</h3>
+        <ul>            
+            <li><a href="https://www.wikidata.org/wiki/Q860861">#Sculpture</a></li>
+            <li><a href="https://www.wikidata.org/wiki/Q11426">#Metal</a></li>
+            <li><a href="https://www.wikidata.org/wiki/Q553403">#Paul Van Hoeydonck</a></li>
+            <li><a href="https://www.wikidata.org/wiki/Q499521">#Mons Hadley</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+        <a href="src/routes/threadDetails.html" class="post">
+            <img src="https://placehold.co/100/000000/FFF" alt="Placeholder Image">
+            <div>
+                <h3>What is this? Found near the riverbank...</h3>
+                <small>Posted by user123 - 1 hour ago</small>
+                <p>This metal object was found near the riverbank. It seems to be made of aluminum but not entirely sure. Anyone can help identify this?</p>
+            </div>
+            <div class="vote-buttons">
+                <button class="vote-button">▲</button>
+                <p class="vote-count">150</p>
+                <button class="vote-button">▼</button>
+            </div>
+        </a>
+
+        <a href="" class="post">
+            <img src="https://placehold.co/100/000000/FFF" alt="Placeholder Image">
+            <div>
+                <h3>Can someone help with this object?</h3>
+                <small>Posted by user456 - 2 days ago</small>
+                <p>It's a small sculpture, about 8 inches tall, found in an old garage. No markings or indications of who made it.</p>
+            </div>
+            <div class="vote-buttons">
+                <button class="vote-button">▲</button>
+                <p class="vote-count">95</p>
+                <button class="vote-button">▼</button>
+            </div>
+        </a>
+
+        <a href="" class="post">
+            <img src="https://placehold.co/100/000000/FFF" alt="Placeholder Image">
+            <div>
+                <h3>Is this a tool or something else?</h3>
+                <small>Posted by user789 - 5 days ago</small>
+                <p>Found this in my grandparent's house, but nobody knows what it was used for. It's made of steel, has a hinge, and seems old.</p>
+            </div>
+            <div class="vote-buttons">
+                <button class="vote-button">▲</button>
+                <p class="vote-count">76</p>
+                <button class="vote-button">▼</button>
+            </div>
+        </a>
+    </main>
+
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Stufffinder</p>
+</footer>
+
+</body>
+</html>
