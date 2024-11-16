@@ -1,0 +1,13 @@
+stateDiagram-v2
+    [*] --> Not_Started
+    Not_Started --> In_Progress : Start Task
+    In_Progress --> Completed : Mark as Completed
+    In_Progress --> Stuck : Mark as Stuck
+    Stuck --> In_Progress : Resume Task
+    In_Progress --> To_Review : Submit for Review
+    To_Review --> Completed : Approve Task
+    Completed --> Archived : Archive Task
+    Stuck --> Archived : Archive Task
+    Not_Started --> Archived : Archive Task
+    Completed --> [*]
+    Archived --> [*]

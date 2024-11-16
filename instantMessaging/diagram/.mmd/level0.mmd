@@ -1,0 +1,11 @@
+graph TD
+  %% Entities and System
+  User[User]
+  Workspace[Workspace System]
+  DataStore[Data Store]
+
+  %% Processes
+  User -->|Joins/Interacts| Workspace
+  Workspace -->|Stores data| DataStore
+  Workspace -->|Provides Access| User
+  Workspace -->|Notifies Events| User

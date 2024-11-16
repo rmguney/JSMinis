@@ -1,0 +1,69 @@
+erDiagram
+  %% Entities and Relationships
+
+  WORKSPACE {
+    int id PK
+    string name
+    string description
+  }
+  
+  USER {
+    int id PK
+    string username
+    string email
+    string password
+  }
+  
+  CHANNEL {
+    int id PK
+    string name
+    boolean is_protected
+    int workspace_id FK
+  }
+  
+  TASK {
+    int id PK
+    string title
+    string status
+    int assigned_to FK
+    int channel_id FK
+  }
+  
+  MESSAGE {
+    int id PK
+    string content
+    datetime timestamp
+    boolean is_edited
+    int user_id FK
+    int channel_id FK
+  }
+  
+  POLL {
+    int id PK
+    string question
+    int channel_id FK
+  }
+  
+  POLL_OPTION {
+    int id PK
+    string option_text
+    int poll_id FK
+  }
+  
+  NOTIFICATION {
+    int id PK
+    string type
+    datetime timestamp
+    int user_id FK
+  }
+  
+  %% Relationships
+  WORKSPACE ||--o{ CHANNEL : contains
+  WORKSPACE ||--o{ USER : has_members
+  CHANNEL ||--o{ TASK : has_tasks
+  CHANNEL ||--o{ MESSAGE : contains_messages
+  USER ||--o{ TASK : assigned_to
+  USER ||--o{ MESSAGE : posts
+  CHANNEL ||--o{ POLL : has_polls
+  POLL ||--o{ POLL_OPTION : has_options
+  USER ||--o{ NOTIFICATION : receives

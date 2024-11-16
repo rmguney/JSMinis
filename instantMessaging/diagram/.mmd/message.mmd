@@ -1,0 +1,14 @@
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Sent : Send Message
+    Sent --> Delivered : Deliver Message
+    Delivered --> Seen : Read by Recipient
+    Seen --> Edited : Edit Message
+    Edited --> Seen : Read by Recipient
+    Delivered --> Edited : Edit Message
+    Draft --> Deleted : Delete Draft
+    Sent --> Deleted : Delete Message
+    Delivered --> Deleted : Delete Message
+    Edited --> Deleted : Delete Message
+    Deleted --> [*]
+    Seen --> [*]

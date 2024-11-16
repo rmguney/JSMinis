@@ -1,0 +1,22 @@
+graph TD
+  %% Entities
+  User[User]
+  Admin[Admin]
+  WorkspaceSystem[Workspace System]
+  ChannelDB[Channel Database]
+  TaskDB[Task Database]
+  NotificationDB[Notification Database]
+  MessageDB[Message Database]
+
+  %% Processes and Interactions
+  User -->|Joins/Leaves| WorkspaceSystem
+  Admin -->|Manages Roles & Permissions| WorkspaceSystem
+  User -->|Posts Messages, Sends Files| WorkspaceSystem
+  User -->|Creates Polls| WorkspaceSystem
+  User -->|Sends/Receives Messages| WorkspaceSystem
+  User -->|Creates/Views Tasks| WorkspaceSystem
+  WorkspaceSystem -->|Stores Channels| ChannelDB
+  WorkspaceSystem -->|Stores Tasks| TaskDB
+  WorkspaceSystem -->|Sends Notifications| NotificationDB
+  WorkspaceSystem -->|Stores Messages| MessageDB
+  WorkspaceSystem -->|Notifies on Events| User

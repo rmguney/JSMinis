@@ -1,0 +1,8 @@
+stateDiagram-v2
+    [*] --> Created
+    Created --> Active : Activate Workspace
+    Active --> Suspended : Suspend Workspace
+    Suspended --> Active : Reinstate Workspace
+    Active --> Archived : Archive Workspace
+    Suspended --> Archived : Archive Workspace
+    Archived --> [*]

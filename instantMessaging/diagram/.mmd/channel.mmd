@@ -1,0 +1,9 @@
+stateDiagram-v2
+    [*] --> Inactive
+    Inactive --> Active : Activate Channel
+    Active --> Protected : Set as Protected
+    Protected --> Active : Remove Protection
+    Active --> Inactive : Deactivate Channel
+    Protected --> Inactive : Deactivate Channel
+    Inactive --> Archived : Archive Channel
+    Archived --> [*]

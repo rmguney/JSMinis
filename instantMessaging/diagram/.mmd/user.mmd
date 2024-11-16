@@ -1,0 +1,9 @@
+stateDiagram-v2
+    [*] --> Registered
+    Registered --> Active : Activate Account
+    Active --> Suspended : Suspend Account
+    Suspended --> Active : Reinstate Account
+    Active --> Deactivated : Deactivate Account
+    Suspended --> Deactivated : Deactivate Account
+    Deactivated --> [*]
+    Registered --> Deactivated : Delete Account

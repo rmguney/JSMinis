@@ -1,0 +1,11 @@
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Published : Publish Poll
+    Published --> Closed : Close Poll
+    Published --> Archived : Archive Poll
+    Closed --> Archived : Archive Poll
+    Draft --> Deleted : Delete Poll
+    Published --> Deleted : Delete Poll
+    Closed --> Deleted : Delete Poll
+    Deleted --> [*]
+    Archived --> [*]
