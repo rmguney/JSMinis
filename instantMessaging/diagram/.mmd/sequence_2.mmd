@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant Admin
+    participant WorkspaceSystem
+    participant Channel
+    participant NotificationService
+    participant Database
+
+    Admin->>WorkspaceSystem: Create task
+    WorkspaceSystem->>Channel: Add task to task management tab
+    WorkspaceSystem->>Database: Save task details
+    Database-->>WorkspaceSystem: Task saved
+    WorkspaceSystem->>NotificationService: Notify assigned users
+    NotificationService-->>Assigned Users: Task assignment notifications
+    WorkspaceSystem-->>Admin: Task assignment complete

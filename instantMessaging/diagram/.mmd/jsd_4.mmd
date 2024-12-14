@@ -1,0 +1,6 @@
+graph TD
+    PostPoll[User Posting a Poll]
+    PostPoll --> ValidatePoll[Validate Poll Details]
+    PostPoll --> StorePoll[Store Poll in Database]
+    PostPoll --> AddPollToChannel[Add Poll to Channel]
+    PostPoll --> NotifyMembers[Notify Channel Members *]

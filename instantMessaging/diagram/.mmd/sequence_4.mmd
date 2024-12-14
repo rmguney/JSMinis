@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant User
+    participant WorkspaceSystem
+    participant Channel
+    participant NotificationService
+    participant Database
+
+    User->>WorkspaceSystem: Submit poll details
+    WorkspaceSystem->>Database: Validate and store poll data
+    Database-->>WorkspaceSystem: Poll stored successfully
+    WorkspaceSystem->>Channel: Add poll to channel
+    WorkspaceSystem->>NotificationService: Notify channel members
+    NotificationService-->>Channel Members: New poll notification
+    WorkspaceSystem-->>User: Poll posted successfully

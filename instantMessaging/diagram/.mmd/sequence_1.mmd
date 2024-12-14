@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant User
+    participant WorkspaceSystem
+    participant EmailService
+    participant Database
+
+    User->>WorkspaceSystem: Request to join via link/email
+    WorkspaceSystem->>EmailService: Validate invite link or email
+    EmailService-->>WorkspaceSystem: Validation result
+    WorkspaceSystem->>Database: Check workspace status
+    Database-->>WorkspaceSystem: Workspace active
+    WorkspaceSystem-->>User: Success message and registration form
+    User->>WorkspaceSystem: Submit registration details
+    WorkspaceSystem->>Database: Save user data
+    Database-->>WorkspaceSystem: Confirmation
+    WorkspaceSystem-->>User: Registration complete

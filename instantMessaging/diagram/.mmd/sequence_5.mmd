@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant Admin
+    participant WorkspaceSystem
+    participant Database
+    participant EmailService
+
+    Admin->>WorkspaceSystem: Submit workspace details
+    WorkspaceSystem->>Database: Validate and store workspace data
+    Database-->>WorkspaceSystem: Workspace created
+    WorkspaceSystem->>Admin: Workspace setup options
+    Admin->>WorkspaceSystem: Configure workspace settings
+    WorkspaceSystem->>Database: Save configurations
+    Database-->>WorkspaceSystem: Configurations saved
+    Admin->>WorkspaceSystem: Invite users via email or link
+    WorkspaceSystem->>EmailService: Send invitations
+    EmailService-->>Users: Invitations sent
+    WorkspaceSystem-->>Admin: Workspace creation complete

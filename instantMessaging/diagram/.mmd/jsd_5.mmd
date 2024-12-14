@@ -1,0 +1,9 @@
+graph TD
+    WorkspaceCreation[Workspace Creation]
+    WorkspaceCreation --> SubmitDetails[Submit Workspace Details]
+    WorkspaceCreation --> ConfigureSettings[Configure Workspace Settings]
+    ConfigureSettings --> SetChannels[Set Default Channels *]
+    ConfigureSettings --> SetPermissions[Set Permissions o]
+    WorkspaceCreation --> InviteUsers[Invite Users]
+    InviteUsers --> GenerateLinks[Generate Invitation Links o]
+    InviteUsers --> SendEmails[Send Email Invitations *]

@@ -1,0 +1,8 @@
+graph TD
+    SendMessage[Send Message in a Channel]
+    SendMessage --> ValidateMessage[Validate Message]
+    SendMessage --> PostMessage[Post Message]
+    SendMessage --> SaveToDatabase[Save to Database]
+    SendMessage --> NotifyMembers[Notify Channel Members *]
+    NotifyMembers --> CreateNotification[Create Notification]
+    NotifyMembers --> DeliverNotification[Deliver Notification]

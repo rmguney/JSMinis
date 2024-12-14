@@ -1,0 +1,8 @@
+graph TD
+    UserJoining[User Joining Workspace]
+    UserJoining --> ValidateInvite[Validate Invite]
+    UserJoining --> CheckWorkspaceStatus[Check Workspace Status]
+    UserJoining --> CompleteRegistration[Complete Registration]
+    CompleteRegistration --> SubmitDetails[Submit Registration Details]
+    CompleteRegistration --> SaveData[Save User Data]
+    CompleteRegistration --> SendConfirmation[Send Confirmation]

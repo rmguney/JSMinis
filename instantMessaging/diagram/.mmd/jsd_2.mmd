@@ -1,0 +1,7 @@
+graph TD
+    TaskAssignment[Task Assignment in a Channel]
+    TaskAssignment --> CreateTask[Create Task]
+    TaskAssignment --> AssignUsers[Assign Task to Users *]
+    AssignUsers --> SelectUsers[Select Users]
+    AssignUsers --> ValidateAssignments[Validate Assignments]
+    TaskAssignment --> NotifyUsers[Notify Assigned Users *]

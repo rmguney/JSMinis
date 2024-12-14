@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant User
+    participant WorkspaceSystem
+    participant Channel
+    participant NotificationService
+    participant Database
+
+    User->>WorkspaceSystem: Send message
+    WorkspaceSystem->>Channel: Post message
+    WorkspaceSystem->>Database: Save message
+    Database-->>WorkspaceSystem: Message stored
+    WorkspaceSystem->>NotificationService: Notify channel members
+    NotificationService-->>Channel Members: New message notification
+    WorkspaceSystem-->>User: Message delivered confirmation
