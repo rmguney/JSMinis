@@ -57,6 +57,17 @@
             z-index: 2;
         }
 
+        .cloud-3 {
+            position: absolute;
+            scale: 1.50;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/cloud.webp');
+            background-repeat: no-repeat;
+            background-position: right top;
+            z-index: 2;
+        }
+
         .content-wrapper {
             position: relative;
             z-index: 10;
@@ -68,8 +79,10 @@
     <!-- Parallax Container -->
     <div id="scene">
         <div class="background" data-depth="0.05"></div> <!-- Static Background -->        
-        <div class="cloud-1" data-depth="0.5"></div>
-        <div class="cloud-2" data-depth="0.8"></div>
+        <div class="cloud-1" data-depth="0.50"></div>
+        <div class="cloud-2" data-depth="1.50"></div>
+        <div class="cloud-3" data-depth="2.50"></div>
+
     </div>
 
     <!-- Main Content -->
@@ -165,7 +178,7 @@
                 </div>
             </div>
 
-            <div class="mt-auto lg:hidden bg-[#070F2A] bg-opacity-50 p-6">
+            <div class="mt-auto lg:hidden bg-[#070F2A] bg-opacity-80 p-6">
                 <div class="flex items-center gap-8 max-w-md mx-auto">
                     <img src="assets/cool-partner.svg" alt="Cool Partner" class="w-24 h-24" />
                     <div class="text-white space-y-2">
