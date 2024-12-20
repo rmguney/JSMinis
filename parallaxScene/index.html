@@ -32,13 +32,28 @@
             z-index: 1;
         }
 
-        .road {
+        .cloud-1 {
             position: absolute;
-            scale: 1.02;
+            scale: 0.60;
             width: 100%;
             height: 100%;
+            background-image: url('assets/cloud.webp');
             background-repeat: no-repeat;
-            background-position: bottom;
+            background-position: top;
+            top: 0;
+            left: 40%;
+            z-index: 2;
+        }
+
+        .cloud-2 {
+            position: absolute;
+            scale: 1;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/cloud.webp');
+            background-repeat: no-repeat;
+            top: 0;
+            left: 20%;
             z-index: 2;
         }
 
@@ -53,14 +68,15 @@
     <!-- Parallax Container -->
     <div id="scene">
         <div class="background" data-depth="0.05"></div> <!-- Static Background -->        
-        <div class="road" data-depth="0.1"></div>
+        <div class="cloud-1" data-depth="0.5"></div>
+        <div class="cloud-2" data-depth="0.8"></div>
     </div>
 
     <!-- Main Content -->
     <div class="content-wrapper">
         <div class="flex flex-col lg:flex-row min-h-screen ">
             <!-- B2 Cargo Section -->
-            <div class="w-full lg:w-[25%] p-8 flex flex-col bg-[#070F2A] bg-opacity-50 shadow-lg">
+            <div class="w-full lg:w-[25%] p-8 flex flex-col bg-[#070F2A] bg-opacity-80 transition duration-300 shadow-lg">
                 <div class="max-w-md mx-auto w-full flex flex-col items-center justify-center flex-grow gap-4 lg:gap-10">
                     <!-- Logo -->
                     <a class="lg:mb-8" href="https://www.b2cargo.com/">
@@ -71,7 +87,7 @@
                     <div class="flex items-center text-orange-600 hover:text-white transition-colors cursor-pointer">
                         <a href="https://www.b2cargo.com/" class="text-xl font-bold">Kurumsal Siteye Devam Edin</a>
                         <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
                         </svg>
                     </div>
                 </div>
@@ -109,7 +125,7 @@
                     </div>
 
                     <!-- Login Form -->
-                    <div class="mt-24 text-center bg-[#070F2A] bg-opacity-50 shadow-lg px-6">
+                    <div class="mt-24 text-center bg-[#070F2A] bg-opacity-80 shadow-lg px-6">
                         <h1 class="text-orange-600 text-4xl font-bold m-2 pt-8">OMNIA</h1>
                         <p class="text-white mb-4">Online İşlemler</p>
 
@@ -117,26 +133,26 @@
                             <div class="space-y-1 text-left">
                                 <label class="text-white text-sm">Kullanıcı Adı</label>
                                 <input type="email" placeholder="Kullanıcı adınızı yazın..." 
-                                    class="w-full p-2 rounded-sm border border-white text-blue-950 focus:border-orange-600 focus:ring-1 focus:ring-orange-600" />
+                                    class="w-full p-2 bg-orange-600 bg-opacity-0 border border-gray-500 hover:border-orange-600 transition duration-300 text-white" />
                             </div>
 
                             <div class="space-y-1 text-left">
                                 <label class="text-white text-sm">Şifre</label>
                                 <input type="password" placeholder="****************" 
-                                    class="w-full p-2 rounded-sm border border-white text-blue-950 focus:border-orange-600 focus:ring-1 focus:ring-orange-600" />
+                                class="w-full p-2 bg-orange-600 bg-opacity-0 border border-gray-500 hover:border-orange-600 transition duration-300 text-white" />
                             </div>
 
                             <div class="flex items-center">
                                 <input type="checkbox" id="remember" class="rounded border-white text-orange-600 focus:ring-orange-600" />
-                                <label for="remember" class="ml-2 text-white text-sm">Beni Hatırla</label>
+                                <label for="remember" class="ml-2 text-white text-sm hover:text-orange-600 transition duration-300">Beni Hatırla</label>
                             </div>
 
-                            <button type="submit" class="w-full bg-orange-600 text-white py-2 rounded-sm transition-colors">
+                            <button type="submit" class="w-full bg-none hover:bg-orange-600 border border-orange-600 text-white py-2 rounded-sm transition-colors transition duration-300">
                                 Giriş
                             </button>
 
                             <div class="text-center pb-4">
-                                <a href="#" class="text-white text-sm hover:text-orange-600 transition-colors">Şifremi Unuttum</a>
+                                <a href="#" class="text-white text-sm hover:text-orange-600 transition-colors transition duration-300">Şifremi Unuttum</a>
                             </div>
                         </form>
                     </div>
